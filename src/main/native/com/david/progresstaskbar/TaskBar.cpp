@@ -4,7 +4,7 @@
 #include <Shobjidl_core.h>
 #include <Windows.h>
 
-JNIEXPORT void JNICALL Java_com_example_demo_TaskBar_SetTaskbarProgress (JNIEnv *env, jobject obj, jfloat progress) {
+JNIEXPORT void JNICALL Java_com_david_progresstaskbar_TaskBar_SetTaskbarProgress (JNIEnv *env, jobject obj, jfloat progress) {
     jclass cls = env->GetObjectClass(obj);
     jfieldID fieldID = env->GetFieldID(cls, "HWND", "J");
     HWND hwnd = reinterpret_cast<HWND>(env->GetLongField(obj, fieldID));
@@ -13,31 +13,27 @@ JNIEXPORT void JNICALL Java_com_example_demo_TaskBar_SetTaskbarProgress (JNIEnv 
 
     if (SUCCEEDED(hr)) {
         hr = pTaskbarList->SetProgressValue(hwnd, progress, 100);
-        std::cout << "set" << progress << std::endl;
         pTaskbarList->Release();
     }
 }
 
-JNIEXPORT void JNICALL Java_com_example_demo_TaskBar_SetTaskbarProgressState(JNIEnv *env, jobject obj, jobject state) {
+JNIEXPORT void JNICALL Java_com_david_progresstaskbar_TaskBar_SetTaskbarProgressState(JNIEnv *env, jobject obj, jobject state) {
     jclass cls = env->GetObjectClass(obj);
     jfieldID fieldID = env->GetFieldID(cls, "HWND", "J");
     HWND hwnd = reinterpret_cast<HWND>(env->GetLongField(obj, fieldID));
-    std::cout << "got hwnd" << std::endl;
 
-    jclass clSTATUS = env->FindClass("com/example/demo/TaskBar$State");
-    std::cout << "got class " << clSTATUS << std::endl;
-    jfieldID id = env->GetStaticFieldID(clSTATUS, "NoProgress", "Lcom/example/demo/TaskBar$State;");
+    jclass clSTATUS = env->FindClass("com/david/progresstaskbar/TaskBar$State");
+    jfieldID id = env->GetStaticFieldID(clSTATUS, "NoProgress", "Lcom/david/progresstaskbar/TaskBar$State;");
     jobject NoProgress = env->GetStaticObjectField(clSTATUS, id);
     std::cout << "got noprogress" << std::endl;
-    id = env->GetStaticFieldID(clSTATUS, "Indeterminate", "Lcom/example/demo/TaskBar$State;");
+    id = env->GetStaticFieldID(clSTATUS, "Indeterminate", "Lcom/david/progresstaskbar/TaskBar$State;");
     jobject Indeterminate = env->GetStaticObjectField(clSTATUS, id);
-    id = env->GetStaticFieldID(clSTATUS, "Normal", "Lcom/example/demo/TaskBar$State;");
+    id = env->GetStaticFieldID(clSTATUS, "Normal", "Lcom/david/progresstaskbar/TaskBar$State;");
     jobject Normal = env->GetStaticObjectField(clSTATUS, id);
-    id = env->GetStaticFieldID(clSTATUS, "Error", "Lcom/example/demo/TaskBar$State;");
+    id = env->GetStaticFieldID(clSTATUS, "Error", "Lcom/david/progresstaskbar/TaskBar$State;");
     jobject Error = env->GetStaticObjectField(clSTATUS, id);
-    id = env->GetStaticFieldID(clSTATUS, "Paused", "Lcom/example/demo/TaskBar$State;");
+    id = env->GetStaticFieldID(clSTATUS, "Paused", "Lcom/david/progresstaskbar/TaskBar$State;");
     jobject Paused = env->GetStaticObjectField(clSTATUS, id);
-    std::cout << "got statuses" << std::endl;
     
     TBPFLAG tstate = TBPF_NOPROGRESS;
     
@@ -67,11 +63,10 @@ JNIEXPORT void JNICALL Java_com_example_demo_TaskBar_SetTaskbarProgressState(JNI
     if (SUCCEEDED(hr)) {
         hr = pTaskbarList->SetProgressState(hwnd, tstate);
         pTaskbarList->Release();
-        std::cout << "set" << tstate << std::endl;
     }
 }
 
-JNIEXPORT jlong JNICALL Java_com_example_demo_TaskBar_getHWND (JNIEnv *env, jobject obj, jstring name) {
+JNIEXPORT jlong JNICALL Java_com_david_progresstaskbar_TaskBar_getHWND (JNIEnv *env, jobject obj, jstring name) {
     const jchar *cName = env->GetStringChars(name, NULL);
     const HWND hwnd = FindWindow(NULL, reinterpret_cast<LPCWSTR>(cName));
     env->ReleaseStringChars(name, cName);
