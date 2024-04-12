@@ -3,6 +3,15 @@ plugins {
   id 'application'
   id 'org.javamodularity.moduleplugin' version '1.8.12'
   id 'org.openjfx.javafxplugin' version '0.0.13'
+  id 'maven-publish'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testImplementation 'org.controlsfx:controlsfx:11.2.1'
 }
 
 javafx {

@@ -1,6 +1,5 @@
 package com.david.test;
 
-import com.david.test.OnProgressUpdate;
 import javafx.concurrent.Task;
 
 public class WorkerTask extends Task<Void> {
@@ -13,8 +12,8 @@ public class WorkerTask extends Task<Void> {
     @Override
     protected Void call() throws Exception {
         for (int i = 0; i <= 100; i++) {
-            updateProgress(i, 100); // Обновление прогресса
-            Thread.sleep(50); // Имитация работы
+            updateProgress(i, 100);
+            Thread.sleep(50);
         }
         return null;
     }

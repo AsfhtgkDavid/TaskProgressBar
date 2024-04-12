@@ -4,6 +4,8 @@ module com.david.test {
 
     requires org.controlsfx.controls;
 
+    requires com.david.progresstaskbar;
+
     opens com.david.test to javafx.fxml;
     exports com.david.test;
 }

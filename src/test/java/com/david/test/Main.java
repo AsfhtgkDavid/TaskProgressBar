@@ -1,5 +1,6 @@
 package com.david.test;
 
+import com.david.progresstaskbar.TaskBar;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -12,31 +13,23 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         ProgressBar progressBar = new ProgressBar();
-        TaskProgressView<WorkerTask> progressView = new TaskProgressView<>();
+//        TaskProgressView<WorkerTask> progressView = new TaskProgressView<>();
 
-        // Создание задачи
         StackPane root = new StackPane();
-        root.getChildren().addAll(progressView, progressBar);
+        root.getChildren().addAll(progressBar);
         primaryStage.setScene(new Scene(root, 300, 200));
         primaryStage.show();
         WorkerTask task = new WorkerTask();
         primaryStage.setTitle("Taskbar Progress Example");
         TaskBar taskBar = new TaskBar(primaryStage);
-        taskBar.SetTaskbarProgressState(TaskBar.State.Error;
-        taskBar.SetTaskbarProgress(20);
+        taskBar.setTaskbarProgressState(TaskBar.State.Error);
+        taskBar.setTaskbarProgress(20);
 
-        // Назначение обработчика прогресса
         task.setOnProgressUpdate((progress) -> {
-            Platform.runLater(()->taskBar.SetTaskbarProgress((float) progress));
+            Platform.runLater(()->taskBar.setTaskbarProgress((float) progress));
         });
 
-//         Добавление задачи на прогресс панель
-        progressView.getTasks().add(task);
-
-        // Создание интерфейса
-
-
-        // Запуск задачи
+//        progressView.getTasks().add(task);
         new Thread(task).start();
     }
 
