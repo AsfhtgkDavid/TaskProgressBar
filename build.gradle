@@ -18,3 +18,27 @@ javafx {
   version = '21'
   modules = ['javafx.controls', 'javafx.fxml']
 }
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      groupId = 'com.david'
+      artifactId = 'progresstaskbar'
+      version = '1.1'
+
+      from components.java
+
+      pom {
+        name = 'TaskProgressBar'
+        description = 'Progress to task bar'
+        url = 'https://github.com/AsfhtgkDavid/TaskProgressBar'
+        licenses {
+          license {
+            name = 'The Apache License, Version 2.0'
+            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          }
+        }
+      }
+    }
+  }
+}
