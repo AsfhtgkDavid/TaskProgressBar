@@ -8,6 +8,9 @@ plugins {
 
 apply plugin: 'maven-publish'
 
+sourceCompatibility = '21'
+targetCompatibility = '21'
+
 repositories {
   mavenCentral()
 }
