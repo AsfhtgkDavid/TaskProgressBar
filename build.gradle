@@ -6,6 +6,8 @@ plugins {
   id 'maven-publish'
 }
 
+apply plugin: 'maven-publish'
+
 repositories {
   mavenCentral()
 }
