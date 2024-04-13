@@ -6,8 +6,6 @@ plugins {
   id 'maven-publish'
 }
 
-apply plugin: 'maven-publish'
-
 sourceCompatibility = '21'
 targetCompatibility = '21'
 
