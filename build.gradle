@@ -8,8 +8,8 @@ plugins {
 apply plugin: 'maven-publish'
 apply plugin: 'java'
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = '21'
+targetCompatibility = '21'
 
 group = 'com.github.AsfhtgkDavid'
 version = '1.0.0'
@@ -37,17 +37,26 @@ publishing {
     maven(MavenPublication) {
       from components.java
 
-//      pom {
-//        name = 'TaskProgressBar'
-//        description = 'Progress to task bar'
-//        url = 'https://github.com/AsfhtgkDavid/TaskProgressBar'
-//        licenses {
-//          license {
-//            name = 'The Apache License, Version 2.0'
-//            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//          }
-//        }
-//      }
+      versionMapping {
+        usage('java-api') {
+          fromResolutionOf('runtimeClasspath')
+        }
+        usage('java-runtime') {
+          fromResolutionResult()
+        }
+      }
+
+      pom {
+        name = 'TaskProgressBar'
+        description = 'Progress to task bar'
+        url = 'https://github.com/AsfhtgkDavid/TaskProgressBar'
+        licenses {
+          license {
+            name = 'The Apache License, Version 2.0'
+            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          }
+        }
+      }
     }
   }
 }
