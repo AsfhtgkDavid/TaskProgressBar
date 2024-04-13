@@ -22,8 +22,8 @@ javafx {
 publishing {
   publications {
     maven(MavenPublication) {
-      groupId = 'com.david'
-      artifactId = 'progresstaskbar'
+      groupId = 'com.github.AsfhtgkDavid'
+      artifactId = 'TaskProgressBar'
       version = '1.1'
 
       from components.java
