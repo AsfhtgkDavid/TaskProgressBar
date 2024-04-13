@@ -27,6 +27,11 @@ javafx {
   modules = ['javafx.controls', 'javafx.fxml']
 }
 
+java {
+  withJavadocJar()
+  withSourcesJar()
+}
+
 publishing {
   publications {
     maven(MavenPublication) {

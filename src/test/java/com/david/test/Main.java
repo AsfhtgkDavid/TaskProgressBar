@@ -1,13 +1,12 @@
 package com.david.test;
 
-import com.david.progresstaskbar.TaskBar;
+import com.github.AsfhtgkDavid.progresstaskbar.TaskBar;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import org.controlsfx.control.TaskProgressView;
 
 public class Main extends Application {
     @Override

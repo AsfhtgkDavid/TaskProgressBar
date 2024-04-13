@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.david.progresstaskbar","l":"LibraryLoader"},{"p":"com.david.progresstaskbar","l":"TaskBar.State"},{"p":"com.david.progresstaskbar","l":"TaskBar"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.github.AsfhtgkDavid.progresstaskbar","l":"LibraryLoader"},{"p":"com.github.AsfhtgkDavid.progresstaskbar","l":"TaskBar.State"},{"p":"com.github.AsfhtgkDavid.progresstaskbar","l":"TaskBar"}];updateSearchResults();
