@@ -1,3 +1,6 @@
+[![Release](https://jitpack.io/v/User/Repo.svg)]
+(https://jitpack.io/AsfhtgkDavid/TaskProgressBar)
+
 # TaskProgressBar
 
 TaskProgressBar is a Java library for managing progress on the taskbar panel in Windows systems using JavaFX. It allows developers to easily control and update the progress state of their JavaFX applications directly from the taskbar.
