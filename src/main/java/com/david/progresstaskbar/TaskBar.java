@@ -2,6 +2,8 @@ package com.david.progresstaskbar;
 
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class TaskBar {
     private long HWND;
 
@@ -21,7 +23,11 @@ public class TaskBar {
         Paused
     }
     static {
-        System.loadLibrary("taskBar");
+        try {
+            LibraryLoader.loadLibrary("taskBar");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public native void SetTaskbarProgress(float percent);
