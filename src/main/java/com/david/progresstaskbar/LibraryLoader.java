@@ -8,7 +8,7 @@ import java.io.*;
  * @author gkubisa
  * @see <a href="https://github.com/gkubisa/jni-maven/blob/master/src/main/java/ie/agisoft/LibraryLoader.java">jni-maven</a>
  */
-public class LibraryLoader {
+class LibraryLoader {
 
     /**
      * Loads a native shared library. It tries the standard System.loadLibrary
@@ -19,7 +19,7 @@ public class LibraryLoader {
      * @throws IOException if the library cannot be extracted from a jar file
      * into a temporary file
      */
-    public static void loadLibrary(String name) throws IOException {
+    protected static void loadLibrary(String name) throws IOException {
         try {
             System.loadLibrary(name);
         } catch (UnsatisfiedLinkError e) {

@@ -1,6 +1,6 @@
 package com.david.test;
 
-import com.github.AsfhtgkDavid.progresstaskbar.TaskBar;
+import com.david.progresstaskbar.TaskBar;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;

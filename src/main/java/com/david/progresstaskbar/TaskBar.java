@@ -30,9 +30,9 @@ public class TaskBar {
         }
     }
 
-    public native void SetTaskbarProgress(float percent);
+    public native void setTaskbarProgress(float percent);
 
-    public native void SetTaskbarProgressState(State state);
+    public native void setTaskbarProgressState(State state);
 
     private native long getHWND(String name);
 }
