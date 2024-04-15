@@ -1,5 +1,4 @@
-[![Release](https://jitpack.io/v/User/Repo.svg)]
-(https://jitpack.io/AsfhtgkDavid/TaskProgressBar)
+<a href="https://jitpack.io/AsfhtgkDavid/TaskProgressBar"><img src="https://jitpack.io/v/AsfhtgkDavid/TaskProgressBar.svg"></a>
 
 # TaskProgressBar
 
