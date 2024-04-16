@@ -24,7 +24,7 @@ class LibraryLoader {
             System.loadLibrary(name);
         } catch (UnsatisfiedLinkError e) {
             String filename = System.mapLibraryName(name);
-            InputStream in = LibraryLoader.class.getClassLoader().getResourceAsStream(filename);
+            InputStream in = LibraryLoader.class.getResourceAsStream(filename);
             int pos = filename.lastIndexOf('.');
             File file = File.createTempFile(filename.substring(0, pos), filename.substring(pos));
             file.deleteOnExit();
