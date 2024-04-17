@@ -1,4 +1,4 @@
-<a href="https://jitpack.io/AsfhtgkDavid/TaskProgressBar"><img src="https://jitpack.io/v/AsfhtgkDavid/TaskProgressBar.svg"></a>
+[![](https://jitpack.io/v/AsfhtgkDavid/TaskProgressBar.svg)](https://jitpack.io/#AsfhtgkDavid/TaskProgressBar)
 
 # TaskProgressBar
 
